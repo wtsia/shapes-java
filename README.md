@@ -21,5 +21,21 @@ Cube
 - Surface Area: For three-dimensional shapes, the surface area is calculated.
 - Perimeter: Two-dimensional shapes have a method that calculates the perimeter.
 - Volume: Three-dimensional shapes have a method that calculates the volume.
+- ToString: Returns text representation of shape name and size variables.
+- Equals: Two shapes are considered the same with the same description and same size.
+- hasSameFace, canFitInside, canBeTopOrBottomOfCylinder
 
 #### Getters/Setters
+- getRadius
+- getDescription
+- getArea
+- getPerimeter
+- getFace
+- getVolume
+- getTopBottom
+- getHeight
+- getLength
+- getWidth
+- getSide
+
+  
