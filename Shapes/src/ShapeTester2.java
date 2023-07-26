@@ -6,6 +6,13 @@ import java.util.List;
 
 public class ShapeTester2 {
 
+    private static void printEqualShapes(Shape inputShapeA, Shape inputShapeB) {
+        System.out.println("Equal shapes found:");
+        System.out.println("    " + inputShapeA);
+        System.out.println("    " + inputShapeB);
+        System.out.println("");
+    }
+    
     public static void main(String[] args) {
 
         Rectangle rectangle1 = new Rectangle(3, 4);
@@ -55,20 +62,20 @@ public class ShapeTester2 {
 
             System.out.println("");
         }
-
+        /**/
         System.out.println("\n*****PRINTING ALL EQUAL, NON-ALIAS SHAPES");
+
         for (int i = 0; i < shapeList.size(); i++) {
             for (int j = i + 1; j < shapeList.size(); j++) {
                 Shape firstShape = shapeList.get(i);
                 Shape secondShape = shapeList.get(j);
-                if (firstShape.getDescription().equals(secondShape.getDescription()) && firstShape.equals(secondShape)) {
-                    System.out.println(firstShape);
-                    System.out.println(secondShape);
-                    System.out.println("");
+                if (firstShape.equals(secondShape)) {
+                    printEqualShapes(firstShape, secondShape);
+                    printEqualShapes(secondShape, firstShape);
                 }
             }
         }
-
+        /**/
         System.out.println("\n*****PRINTING ALL CUBE/SQUARE COMBINATIONS WHERE THE SQUARE IS A SIDE FOR THE CUBE");
         for (Shape firstShape : shapeList) {
             for (Shape secondShape : shapeList) {
