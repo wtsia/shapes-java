@@ -26,7 +26,7 @@ public class Cube extends ThreeDimensionalShape {
 
     @Override
     public String toString() {
-        return getDescription() + " Side Length: " + face.getSide();
+        return "Cube Side Length: " + face.getSide();
     }
 
     public boolean hasSameFace(Square square) {
