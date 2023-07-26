@@ -1,8 +1,6 @@
-# Authors
-Winston Tsia
-Noah Rodriguez
-Nicole Mills-Dunning
-Garrick Ngai
+|AUTHORS|
+|:-:|
+| Winston Tsia, Noah Rodriguez, Nicole Mills-Dunning,  Garrick Ngai |
 
 # shapes-java
 Java program that applies the topics of Inheritance and Polymorphism.
