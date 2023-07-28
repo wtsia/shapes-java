@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.w3c.dom.css.Rect;
+
 public class ShapeTester2 {
 
     private static void printEqualShapes(Shape inputShapeA, Shape inputShapeB) {
@@ -93,15 +95,22 @@ public class ShapeTester2 {
         }
 
         System.out.println("\n*****PRINTING ALL COMBINATIONS OF TWO-DIMENSIONAL SHAPES THAT CAN FIT INSIDE ANOTHER");
+        /*
+         *  algo design:
+         *      - Compares all 2d shapes against other shapes + its own type
+         *   
+         * 
+         */
+
         for (Shape firstShape : shapeList) {
-            if (firstShape instanceof Cube) {
-                Cube outerCube = (Cube) firstShape;
+            if (firstShape instanceof TwoDimensionalShape && firstShape instanceof Rectangle) {
+                Rectangle outerRectangle = (Rectangle) firstShape;
                 for (Shape secondShape : shapeList) {
                     if (secondShape instanceof TwoDimensionalShape) {
                         TwoDimensionalShape innerShape = (TwoDimensionalShape) secondShape;
-                        if (outerCube.canFitInside(innerShape)) {
+                        if (outerRectangle.canFitInside(innerShape)) {
                             System.out.println("Nested Shapes Found:");
-                            System.out.println("\tOuter: " + outerCube);
+                            System.out.println("\tOuter: " + outerRectangle);
                             System.out.println("\tInner: " + innerShape);
                             System.out.println("");
                         }

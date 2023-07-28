@@ -15,6 +15,20 @@ public class Rectangle extends TwoDimensionalShape {
         return width;
     }
 
+    public int getSmaller() {
+        if (this.length > this.width) {
+            return this.width;
+        }
+        return this.length;
+    }
+
+    public int getBigger() {
+        if (this.length > this.width) {
+            return this.length;
+        }
+        return this.width;
+    }
+
     @Override
     public String getDescription() {
         return "Rectangle: A quadrilateral with four right angles";
@@ -42,5 +56,21 @@ public class Rectangle extends TwoDimensionalShape {
         Rectangle other = (Rectangle) obj;
         return (this.length == other.length && this.width == other.width)
                 || (this.length == other.width && this.width == other.length);
+    }
+
+    public boolean canFitInside(TwoDimensionalShape shape) {
+        if (shape instanceof Square) {
+            Square square = (Square) shape;
+            return getSmaller() > square.getSide();
+        } else if (shape instanceof Circle) {
+            Circle circle = (Circle) shape;
+            return getSmaller() > circle.getRadius()*2.0; 
+        } else if (shape instanceof Rectangle) {
+            Rectangle rectangle = (Rectangle) shape;
+            if (getBigger() > rectangle.getBigger() && getSmaller() > rectangle.getSmaller()) {
+                return true;
+            }
+        }
+        return false;
     }
 }

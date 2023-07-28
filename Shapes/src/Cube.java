@@ -32,12 +32,4 @@ public class Cube extends ThreeDimensionalShape {
     public boolean hasSameFace(Square square) {
         return face.equals(square);
     }
-
-    public boolean canFitInside(TwoDimensionalShape shape) {
-        if (shape instanceof Square) {
-            Square square = (Square) shape;
-            return face.getSide() <= square.getSide();
-        }
-        return false;
-    }
 }
