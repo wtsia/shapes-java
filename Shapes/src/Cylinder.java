@@ -34,7 +34,7 @@ public class Cylinder extends ThreeDimensionalShape {
 
     @Override
     public String toString() {
-        return "Cylinder  Radius: " + topBottom.getRadius() + " Height: " + height;
+        return "Cylinder\tRadius: " + topBottom.getRadius() + "\tHeight: " + height;
     }
 
     public boolean canBeTopOrBottomOfCylinder(Circle circle) {

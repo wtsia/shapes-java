@@ -8,8 +8,8 @@ public class ShapeTester2 {
 
     private static void printEqualShapes(Shape inputShapeA, Shape inputShapeB) {
         System.out.println("Equal shapes found:");
-        System.out.println("    " + inputShapeA);
-        System.out.println("    " + inputShapeB);
+        System.out.println("\t" + inputShapeA);
+        System.out.println("\t" + inputShapeB);
         System.out.println("");
     }
     
@@ -84,8 +84,8 @@ public class ShapeTester2 {
                     Square square = (Square) secondShape;
                     if (cube.getFace().equals(square)) {
                     	System.out.println("Square-Cube Match Found: ");
-                        System.out.println("\t " + secondShape);
-                        System.out.println("\t " + firstShape);
+                        System.out.println("\t" + secondShape);
+                        System.out.println("\t" + firstShape);
                         System.out.println("");
                     }
                 }

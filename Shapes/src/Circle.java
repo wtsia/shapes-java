@@ -26,7 +26,7 @@ public class Circle extends TwoDimensionalShape {
 
     @Override
     public String toString() {
-        return "Circle     Radius: " + radius;
+        return "Circle\tRadius: " + radius;
     }
 
     @Override
