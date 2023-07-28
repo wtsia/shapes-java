@@ -16,6 +16,6 @@ public class Square extends Rectangle {
 
     @Override
     public String toString() {
-        return "Square:    Side Length: " + getSide();
+        return "Square: Side Length: " + getSide();
     }
 }

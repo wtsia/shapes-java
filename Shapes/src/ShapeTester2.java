@@ -83,8 +83,9 @@ public class ShapeTester2 {
                     Cube cube = (Cube) firstShape;
                     Square square = (Square) secondShape;
                     if (cube.getFace().equals(square)) {
-                        System.out.println(cube);
-                        System.out.println(square);
+                    	System.out.println("Square-Cube Match Found: ");
+                        System.out.println("\t " + secondShape);
+                        System.out.println("\t " + firstShape);
                         System.out.println("");
                     }
                 }
