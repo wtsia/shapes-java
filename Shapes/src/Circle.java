@@ -9,6 +9,23 @@ public class Circle extends TwoDimensionalShape {
         return radius;
     }
 
+    public boolean canFitInside(TwoDimensionalShape shape) {
+        if (shape instanceof Square) {
+            Square square = (Square) shape;
+            double sideSquare = (double) square.getSide();
+            return getRadius()*2.0 > Math.sqrt(2*sideSquare*sideSquare);
+        } else if (shape instanceof Circle) {
+            Circle circle = (Circle) shape;
+            return getRadius() > circle.getRadius(); 
+        } else if (shape instanceof Rectangle) {
+            Rectangle rectangle = (Rectangle) shape;
+            double smallSide = (double) rectangle.getSmaller();
+            double bigSide = (double) rectangle.getBigger();
+            
+        }
+        return false;
+    }
+
     @Override
     public String getDescription() {
         return "Circle: A closed plane curve every point of which is equidistant from a fixed point within the curve";
