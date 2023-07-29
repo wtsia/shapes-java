@@ -109,7 +109,7 @@ public class ShapeTester2 {
                 for (Shape secondShape : shapeList) {
                     if (secondShape instanceof TwoDimensionalShape) {
                         TwoDimensionalShape innerShape = (TwoDimensionalShape) secondShape;
-                        if (outerRectangle.canFitInside(innerShape)) {
+                        if (outerRectangle.perimeterCanFitInside(innerShape)) {
                             System.out.println("Nested Shapes Found:");
                             System.out.println("\tOuter: " + outerRectangle);
                             System.out.println("\tInner: " + innerShape);
@@ -127,7 +127,7 @@ public class ShapeTester2 {
                 for (Shape secondShape : shapeList) {
                     if (secondShape instanceof TwoDimensionalShape) {
                         TwoDimensionalShape innerShape = (TwoDimensionalShape) secondShape;
-                        if (outerSquare.canFitInside(innerShape)) {
+                        if (outerSquare.perimeterCanFitInside(innerShape)) {
                             System.out.println("Nested Shapes Found:");
                             System.out.println("\tOuter: " + outerSquare);
                             System.out.println("\tInner: " + innerShape);
@@ -145,7 +145,7 @@ public class ShapeTester2 {
                 for (Shape secondShape : shapeList) {
                     if (secondShape instanceof TwoDimensionalShape) {
                         TwoDimensionalShape innerShape = (TwoDimensionalShape) secondShape;
-                        if (outerCircle.canFitInside(innerShape)) {
+                        if (outerCircle.perimeterCanFitInside(innerShape)) {
                             System.out.println("Nested Shapes Found:");
                             System.out.println("\tOuter: " + outerCircle);
                             System.out.println("\tInner: " + innerShape);

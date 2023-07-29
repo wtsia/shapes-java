@@ -9,7 +9,7 @@ public class Circle extends TwoDimensionalShape {
         return radius;
     }
 
-    public boolean canFitInside(TwoDimensionalShape shape) {
+    public boolean perimeterCanFitInside(TwoDimensionalShape shape) {
         if (shape instanceof Square) {
             Square square = (Square) shape;
             double sideSquare = (double) square.getSide();
@@ -19,9 +19,12 @@ public class Circle extends TwoDimensionalShape {
             return getRadius() > circle.getRadius(); 
         } else if (shape instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) shape;
-            double smallSide = (double) rectangle.getSmaller();
-            double bigSide = (double) rectangle.getBigger();
-            
+            double smallSide = (double) rectangle.getSmallerSide();
+            double bigSide = (double) rectangle.getBiggerSide();
+            smallSide = smallSide/2.0;
+            bigSide = bigSide/2.0;
+            double hypotenuseLength = Math.sqrt(smallSide*smallSide + bigSide*bigSide);
+            return getRadius() > hypotenuseLength;
         }
         return false;
     }
