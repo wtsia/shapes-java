@@ -117,9 +117,9 @@ Nested Shapes Found:
 	Outer: Rectangle	Width: 5	Height: 6
 	Inner: Square	Side Length: 4
 
-Nested Shapes Found:
+Nested Shapes Found: !! 6 Diameter Circle cannot fit in a 5x6 rectangle
 	Outer: Rectangle	Width: 5	Height: 6
-	Inner: Circle	Radius: 3
+	Inner: Circle	Radius: 3 
 
 Nested Shapes Found:
 	Outer: Square	Side Length: 4

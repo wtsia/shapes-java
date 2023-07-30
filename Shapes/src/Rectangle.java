@@ -28,14 +28,14 @@ public class Rectangle extends TwoDimensionalShape {
         }
         return this.width;
     }
-    // TODO: Rectangle <= Circle
+    
     public boolean perimeterCanFitInside(TwoDimensionalShape shape) {
         if (shape instanceof Square) {
             Square square = (Square) shape;
             return getSmallerSide() > square.getSide();
         } else if (shape instanceof Circle) {
             Circle circle = (Circle) shape;
-            return getSmallerSide() > circle.getRadius()*2.0; 
+            return getSmallerSide() > circle.getRadius() * 2; 
         } else if (shape instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) shape;
             if (getBiggerSide() > rectangle.getBiggerSide() && getSmallerSide() > rectangle.getSmallerSide()) {

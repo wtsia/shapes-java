@@ -13,7 +13,7 @@ public class Circle extends TwoDimensionalShape {
         if (shape instanceof Square) {
             Square square = (Square) shape;
             double sideSquare = (double) square.getSide();
-            return getRadius()*2.0 > Math.sqrt(2*sideSquare*sideSquare);
+            return getRadius() * 2.0 > Math.sqrt(2) * sideSquare;
         } else if (shape instanceof Circle) {
             Circle circle = (Circle) shape;
             return getRadius() > circle.getRadius(); 
@@ -21,9 +21,9 @@ public class Circle extends TwoDimensionalShape {
             Rectangle rectangle = (Rectangle) shape;
             double smallSide = (double) rectangle.getSmallerSide();
             double bigSide = (double) rectangle.getBiggerSide();
-            smallSide = smallSide/2.0;
-            bigSide = bigSide/2.0;
-            double hypotenuseLength = Math.sqrt(smallSide*smallSide + bigSide*bigSide);
+            smallSide = smallSide / 2.0;
+            bigSide = bigSide / 2.0;
+            double hypotenuseLength = Math.sqrt(smallSide * smallSide + bigSide * bigSide);
             return getRadius() > hypotenuseLength;
         }
         return false;
