@@ -62,7 +62,7 @@ public class Rectangle extends TwoDimensionalShape {
 
     @Override
     public String toString() {
-        return "Rectangle:\tWidth: " + width + "\tHeight: " + length;
+        return "Rectangle\tWidth: " + width + "\tHeight: " + length;
     }
 
     @Override

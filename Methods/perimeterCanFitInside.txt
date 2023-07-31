@@ -1,0 +1,39 @@
+// by Nicole
+public boolean perimeterCanFitInside(Shape s) {
+    	Square sq = (Square) s;
+     	Rectangle rec = (Rectangle) s;
+     	Circle cir = (Circle)s;
+    	boolean fits = false;
+  
+    	if (sq.getPerimeter() == rec.getPerimeter()) {
+			fits = false;
+		}
+    	else if (rec.getPerimeter() == cir.getPerimeter()) {
+			fits = false;
+	}
+    	else if (cir.getPerimeter() == sq.getPerimeter()) {
+			fits = false;
+	}
+    	
+    	else if (sq.getPerimeter() > rec.getPerimeter()) {
+    		fits = true;
+    		}
+    	else if (sq.getPerimeter() > cir.getPerimeter()) {
+			fits = true;
+    	}
+    	else if (rec.getPerimeter() > cir.getPerimeter()) {
+			fits = true;
+	}
+    	else if (rec.getPerimeter() > sq.getPerimeter()) {
+			fits = true;
+	}
+    	else if (cir.getPerimeter() > sq.getPerimeter()) {
+			fits = true;
+	}
+    	if (cir.getPerimeter() > rec.getPerimeter()) {
+			fits = true;
+	}
+    		
+    		return fits;
+    	
+    } 
