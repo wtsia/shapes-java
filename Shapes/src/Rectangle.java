@@ -32,7 +32,7 @@ public class Rectangle extends TwoDimensionalShape {
 
     @Override
     public String toString() {
-        return "Rectangle: Width: " + width + "   Height: " + length;
+        return "Rectangle\tWidth: " + width + "\tHeight: " + length;
     }
 
     @Override

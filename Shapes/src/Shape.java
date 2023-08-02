@@ -1,6 +1,5 @@
 public abstract class Shape {
     public abstract String getDescription();
-
     public abstract double getArea();
 }
 

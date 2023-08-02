@@ -1,0 +1,110 @@
+// by Nicole
+public boolean perimeterCanFitInside(Shape s) {
+    	Square sq = (Square) s;
+     	Rectangle rec = (Rectangle) s;
+     	Circle cir = (Circle)s;
+    	boolean fits = false;
+  
+    	if (sq.getPerimeter() == rec.getPerimeter()) {
+			fits = false;
+		}
+    	else if (rec.getPerimeter() == cir.getPerimeter()) {
+			fits = false;
+	}
+    	else if (cir.getPerimeter() == sq.getPerimeter()) {
+			fits = false;
+	}
+    	
+    	else if (sq.getPerimeter() > rec.getPerimeter()) {
+    		fits = true;
+    		}
+    	else if (sq.getPerimeter() > cir.getPerimeter()) {
+			fits = true;
+    	}
+    	else if (rec.getPerimeter() > cir.getPerimeter()) {
+			fits = true;
+	}
+    	else if (rec.getPerimeter() > sq.getPerimeter()) {
+			fits = true;
+	}
+    	else if (cir.getPerimeter() > sq.getPerimeter()) {
+			fits = true;
+	}
+    	if (cir.getPerimeter() > rec.getPerimeter()) {
+			fits = true;
+	}
+    		
+    		return fits;
+    	
+    } 
+
+// Nested Shapes by Winston
+
+    public boolean perimeterCanFitInside(TwoDimensionalShape shape) {
+        if (shape instanceof Square) {
+            Square square = (Square) shape;
+            double sideSquare = (double) square.getSide();
+            return getRadius() * 2.0 > Math.sqrt(2) * sideSquare;
+        } else if (shape instanceof Circle) {
+            Circle circle = (Circle) shape;
+            return getRadius() > circle.getRadius(); 
+        } else if (shape instanceof Rectangle) {
+            Rectangle rectangle = (Rectangle) shape;
+            double smallSide = (double) rectangle.getSmallerSide();
+            double bigSide = (double) rectangle.getBiggerSide();
+            smallSide = smallSide / 2.0;
+            bigSide = bigSide / 2.0;
+            double hypotenuseLength = Math.sqrt(smallSide * smallSide + bigSide * bigSide);
+            return getRadius() > hypotenuseLength;
+        }
+        return false;
+    }
+
+
+
+    public int getSmallerSide() {
+        if (this.length > this.width) {
+            return this.width;
+        }
+        return this.length;
+    }
+
+    public int getBiggerSide() {
+        if (this.length > this.width) {
+            return this.length;
+        }
+        return this.width;
+    }
+    
+    public boolean perimeterCanFitInside(TwoDimensionalShape shape) {
+        if (shape instanceof Square) {
+            Square square = (Square) shape;
+            return getSmallerSide() > square.getSide();
+        } else if (shape instanceof Circle) {
+            Circle circle = (Circle) shape;
+            return getSmallerSide() > circle.getRadius() * 2; 
+        } else if (shape instanceof Rectangle) {
+            Rectangle rectangle = (Rectangle) shape;
+            if (getBiggerSide() > rectangle.getBiggerSide() && getSmallerSide() > rectangle.getSmallerSide()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+	
+
+    public boolean perimeterCanFitInside(TwoDimensionalShape shape) {
+        if (shape instanceof Square) {
+            Square square = (Square) shape;
+            return getSide() > square.getSide();
+        } else if (shape instanceof Circle) {
+            Circle circle = (Circle) shape;
+            return getSide() > circle.getRadius() * 2.0; 
+        } else if (shape instanceof Rectangle) {
+            Rectangle rectangle = (Rectangle) shape;
+            double squareMaxLength = (rectangle.getBiggerSide() + rectangle.getSmallerSide())/Math.sqrt(2);
+            return getSide() < squareMaxLength;
+        }
+        return false;
+    }
