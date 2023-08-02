@@ -2,15 +2,7 @@ import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShapeTester2 {
-
-    private static void printEqualShapes(Shape inputShapeA, Shape inputShapeB) {
-        System.out.println("Equal shapes found:");
-        System.out.println("\t" + inputShapeA);
-        System.out.println("\t" + inputShapeB);
-        System.out.println("");
-    }
-
+public class ShapeTester {
     public static void main(String[] args) {
 
         Rectangle rectangle1 = new Rectangle(3, 4);
@@ -60,20 +52,21 @@ public class ShapeTester2 {
 
             System.out.println("");
         }
-        /**/
+        
         System.out.println("\n*****PRINTING ALL EQUAL, NON-ALIAS SHAPES");
-
         for (int i = 0; i < shapeList.size(); i++) {
             for (int j = i + 1; j < shapeList.size(); j++) {
                 Shape firstShape = shapeList.get(i);
                 Shape secondShape = shapeList.get(j);
                 if (firstShape.equals(secondShape)) {
-                    printEqualShapes(firstShape, secondShape);
-                    printEqualShapes(secondShape, firstShape);
+                    System.out.println("Equal shapes found:");
+                    System.out.println("\t" + firstShape);
+                    System.out.println("\t" + secondShape);
+                    System.out.println("");
                 }
             }
         }
-        /**/
+        
         System.out.println("\n*****PRINTING ALL CUBE/SQUARE COMBINATIONS WHERE THE SQUARE IS A SIDE FOR THE CUBE");
         for (Shape firstShape : shapeList) {
             for (Shape secondShape : shapeList) {
@@ -90,62 +83,44 @@ public class ShapeTester2 {
             }
         }
 
-        System.out.println("\n*****PRINTING ALL COMBINATIONS OF TWO-DIMENSIONAL SHAPES THAT CAN FIT INSIDE ANOTHER");
-        /*
-         *  algo design:
-         *      - Compares all 2d shapes against other shapes + its own type
-         *   
-         * 
-         */
-        
+        System.out.println("\n*****PRINTING ALL COMBINATIONS OF TWO-DIMENSIONAL SHAPES THAT CAN FIT INSIDE ANOTHER");        
         for (Shape firstShape : shapeList) {
-            // check Rectangle
-            if (firstShape instanceof TwoDimensionalShape && firstShape instanceof Rectangle) {
-                Rectangle outerRectangle = (Rectangle) firstShape;
+            if (firstShape instanceof TwoDimensionalShape) {
                 for (Shape secondShape : shapeList) {
-                    if (secondShape instanceof TwoDimensionalShape) {
-                        TwoDimensionalShape innerShape = (TwoDimensionalShape) secondShape;
-                        if (outerRectangle.perimeterCanFitInside(innerShape)) {
-                            System.out.println("Nested Shapes Found:");
-                            System.out.println("\tOuter: " + outerRectangle);
-                            System.out.println("\tInner: " + innerShape);
-                            System.out.println("");
+                    if (firstShape instanceof Rectangle) {
+                        Rectangle outerRectangle = (Rectangle) firstShape;
+                        if (secondShape instanceof TwoDimensionalShape) {
+                            TwoDimensionalShape innerShape = (TwoDimensionalShape) secondShape;
+                            if (outerRectangle.perimeterCanFitInside(innerShape)) {
+                                System.out.println("Nested Shapes Found:");
+                                System.out.println("\tOuter: " + outerRectangle);
+                                System.out.println("\tInner: " + innerShape);
+                                System.out.println("");
+                            }
                         }
                     }
-                }
-            }
-        }
-
-        for (Shape firstShape : shapeList) {
-            // check Square
-            if (firstShape instanceof TwoDimensionalShape && firstShape instanceof Square) {
-                Square outerSquare = (Square) firstShape;
-                for (Shape secondShape : shapeList) {
-                    if (secondShape instanceof TwoDimensionalShape) {
-                        TwoDimensionalShape innerShape = (TwoDimensionalShape) secondShape;
-                        if (outerSquare.perimeterCanFitInside(innerShape)) {
-                            System.out.println("Nested Shapes Found:");
-                            System.out.println("\tOuter: " + outerSquare);
-                            System.out.println("\tInner: " + innerShape);
-                            System.out.println("");
+                    if (firstShape instanceof Square) {
+                        Square outerSquare = (Square) firstShape;
+                        if (secondShape instanceof TwoDimensionalShape) {
+                            TwoDimensionalShape innerShape = (TwoDimensionalShape) secondShape;
+                            if (outerSquare.perimeterCanFitInside(innerShape)) {
+                                System.out.println("Nested Shapes Found:");
+                                System.out.println("\tOuter: " + outerSquare);
+                                System.out.println("\tInner: " + innerShape);
+                                System.out.println("");
+                            }
                         }
                     }
-                }
-            }
-        }
-
-        for (Shape firstShape : shapeList) {
-            // check Circle
-            if (firstShape instanceof TwoDimensionalShape && firstShape instanceof Circle) {
-                Circle outerCircle = (Circle) firstShape;
-                for (Shape secondShape : shapeList) {
-                    if (secondShape instanceof TwoDimensionalShape) {
-                        TwoDimensionalShape innerShape = (TwoDimensionalShape) secondShape;
-                        if (outerCircle.perimeterCanFitInside(innerShape)) {
-                            System.out.println("Nested Shapes Found:");
-                            System.out.println("\tOuter: " + outerCircle);
-                            System.out.println("\tInner: " + innerShape);
-                            System.out.println("");
+                    if (firstShape instanceof Circle) {
+                        Circle outerCircle = (Circle) firstShape;
+                        if (secondShape instanceof TwoDimensionalShape) {
+                            TwoDimensionalShape innerShape = (TwoDimensionalShape) secondShape;
+                            if (outerCircle.perimeterCanFitInside(innerShape)) {
+                                System.out.println("Nested Shapes Found:");
+                                System.out.println("\tOuter: " + outerCircle);
+                                System.out.println("\tInner: " + innerShape);
+                                System.out.println("");
+                            }
                         }
                     }
                 }

@@ -15,36 +15,6 @@ public class Rectangle extends TwoDimensionalShape {
         return width;
     }
 
-    public int getSmallerSide() {
-        if (this.length > this.width) {
-            return this.width;
-        }
-        return this.length;
-    }
-
-    public int getBiggerSide() {
-        if (this.length > this.width) {
-            return this.length;
-        }
-        return this.width;
-    }
-    
-    public boolean perimeterCanFitInside(TwoDimensionalShape shape) {
-        if (shape instanceof Square) {
-            Square square = (Square) shape;
-            return getSmallerSide() > square.getSide();
-        } else if (shape instanceof Circle) {
-            Circle circle = (Circle) shape;
-            return getSmallerSide() > circle.getRadius() * 2; 
-        } else if (shape instanceof Rectangle) {
-            Rectangle rectangle = (Rectangle) shape;
-            if (getBiggerSide() > rectangle.getBiggerSide() && getSmallerSide() > rectangle.getSmallerSide()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     @Override
     public String getDescription() {
         return "Rectangle: A quadrilateral with four right angles";
