@@ -9,7 +9,7 @@ This repository contains a collection of Java classes that represent various sha
 To use the classes in your Java application, follow these steps:
 
 Clone the repository to your local machine:
-`git clone https://github.com/your-username/java-shapes-repo.git`
+```git clone https://github.com/your-username/java-shapes-repo.git```
 
 Import the project into your Java IDE.
 
@@ -22,7 +22,8 @@ Happy coding! :rocket:
 ## VSCode
 `cd` into directory above `src` containing Java program
 
-in directory, `code .`
+in directory:
+```code .```
 
 # Concepts
 ## Inheritance
@@ -34,23 +35,35 @@ Inheritance in Java is achieved using the extends keyword. When a class extends 
 In Java, polymorphism is a core object-oriented programming concept that allows a class to take on multiple forms. It enables a single method or operation to work with different types of objects, allowing objects of different classes to be treated as objects of a common superclass. Polymorphism is one of the pillars of OOP and is achieved through method overriding and method overloading.
 
 # Classes
-Circle: Represents a two-dimensional circle. It extends the TwoDimensionalShape class and provides methods to calculate its area and circumference.
+```
+- Shape
+  - ThreeDimensionalShape
+    - Cube
+    - Cylinder
+  - TwoDimensionalShape
+    - Circle
+    - Rectangle
+    - Square
+- ShapeTester
 
-Cube: Represents a three-dimensional cube. It extends the ThreeDimensionalShape class and provides methods to calculate its volume and surface area.
+```
+- Circle: Represents a two-dimensional circle. It extends the TwoDimensionalShape class and provides methods to calculate its area and circumference.
 
-Cylinder: Represents a three-dimensional cylinder. It extends the ThreeDimensionalShape class and provides methods to calculate its volume and surface area.
+- Cube: Represents a three-dimensional cube. It extends the ThreeDimensionalShape class and provides methods to calculate its volume and surface area.
 
-Rectangle: Represents a two-dimensional rectangle. It extends the TwoDimensionalShape class and provides methods to calculate its area and perimeter.
+- Cylinder: Represents a three-dimensional cylinder. It extends the ThreeDimensionalShape class and provides methods to calculate its volume and surface area.
 
-Shape: An abstract class serving as the base class for all shape classes. It defines common properties and methods that are shared by both two-dimensional and three-dimensional shapes.
+- Rectangle: Represents a two-dimensional rectangle. It extends the TwoDimensionalShape class and provides methods to calculate its area and perimeter.
 
-ShapeTester: A class containing the main method that demonstrates the usage of the shape classes by creating instances of different shapes and performing calculations.
+- Shape: An abstract class serving as the base class for all shape classes. It defines common properties and methods that are shared by both two-dimensional and three-dimensional shapes.
 
-Square: Represents a two-dimensional square. It extends the Rectangle class and provides methods to calculate its area and perimeter.
+- ShapeTester: A class containing the main method that demonstrates the usage of the shape classes by creating instances of different shapes and performing calculations.
 
-ThreeDimensionalShape: An abstract class representing a three-dimensional shape. It extends the Shape class and defines methods related to three-dimensional shapes.
+- Square: Represents a two-dimensional square. It extends the Rectangle class and provides methods to calculate its area and perimeter.
 
-TwoDimensionalShape: An abstract class representing a two-dimensional shape. It extends the Shape class and defines methods related to two-dimensional shapes.
+- ThreeDimensionalShape: An abstract class representing a three-dimensional shape. It extends the Shape class and defines methods related to three-dimensional shapes.
+
+- TwoDimensionalShape: An abstract class representing a two-dimensional shape. It extends the Shape class and defines methods related to two-dimensional shapes.
 
 # Methods
 - Dimension Method: All shapes have dimensions that describe their size.
