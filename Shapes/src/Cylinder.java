@@ -22,7 +22,7 @@ public class Cylinder extends ThreeDimensionalShape {
 
     @Override
     public double getArea() {
-        double circleArea = topBottom.getArea();
+        double circleArea = 2 * topBottom.getArea();
         double lateralArea = 2 * Math.PI * topBottom.getRadius() * height;
         return circleArea + lateralArea;
     }
